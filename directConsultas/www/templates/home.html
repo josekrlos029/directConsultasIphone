@@ -1,0 +1,54 @@
+<ion-view >
+
+  <ion-content>
+
+    <ion-slide-box style="margin-top: 12px;" show-pager="false" auto-play="true" id="slide" on-slide-changed="slideHasChanged($index)">
+	  
+	  <ion-slide ng-repeat="pauta in Pautas">
+
+	    <div>
+	    	<img class="pauta" src="http://app.directconsultas.com/utiles/imagenes/pautas/{{pauta.idPauta}}-0.jpg" />
+	    </div>
+	    <div class="banner" style="padding: 3px;">
+	    	<h3 style="color:white;z-index:111111;">{{pauta.titulo}}</h3>
+	    	<h5 style="color:white; margin-top:-13px;">{{pauta.descripcion}}</h5> 
+	    </div>
+
+	  </ion-slide>
+
+	</ion-slide-box>
+	
+	<center><h5 style="margin: 5px;">{{city}}</h5></center>
+
+	<div class="bar item-input-inset">
+
+
+
+		<label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" placeholder="Busca en DirectConsultas...">
+	  	</label>
+  	</div>
+
+	<ion-list>
+	
+	    <div ng-repeat="categoria in categorias">
+	      <ion-item style="padding:5px;" class="item-stable"
+	                ng-click="toggleGroup(categoria)"
+	                ng-class="{active: isGroupShown(categoria)}">
+	        
+	         <img class="categoria" style="float:left" src="http://app.directconsultas.com/utiles/imagenes/categorias/{{categoria.idCategoria}}.jpg" /><p style="padding:3px;float:left">{{categoria.nombre}}</p>
+	      </ion-item>
+
+	      <ion-item class="item-accordion"
+	                ng-repeat="subcategoria in categoria.subcategorias"
+	                ng-show="isGroupShown(categoria)">
+	        {{subcategoria.nombre}}
+	      </ion-item>
+	    </div>
+	    
+	  </ion-list>
+
+  </ion-content>
+
+</ion-view>
