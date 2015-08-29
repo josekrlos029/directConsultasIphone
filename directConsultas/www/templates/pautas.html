@@ -1,0 +1,17 @@
+<ion-view>
+    <ion-content style="margin-top: 12px;">
+        
+        <div class="list">
+
+            <a class="item item-thumbnail-left" href="#" ng-repeat="pauta in Pautas">
+                <img style="background: url(http://app.directconsultas.com/utiles/imagenes/pautas/{{pauta.idPauta}}-0.jpg) no-repeat center center;background-size: 100%; 100%" alt="">
+              <h2 style="color:#184997">{{pauta.titulo}}</h2>
+              <p>{{pauta.descripcion}}</p>
+              <h3 style="color:#d06b08; float: right;margin-top: 15px;">${{pauta.precio}}</h3>
+              
+            </a>
+
+        </div>
+        
+    </ion-content>
+</ion-view>

@@ -18,9 +18,18 @@ var app;
         cordova.plugins.Keyboard.disableScroll(true);
 
       }
+      
+//        $cordovaStatusbar.overlaysWebView(true);
+//        $cordovaStatusbar.style(1);//Light
+//        
+//        $cordovaStatusbar.show();
+        
+      
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
         StatusBar.styleLightContent();
+        StatusBar.styleColor('black');
+        StatusBar.show();
       }
     });
   })
@@ -71,7 +80,6 @@ var app;
         }
       })
 
-
     .state('tab.home', {
         url: '/home',
         views: {
@@ -81,6 +89,17 @@ var app;
           }
         }
       })
+      
+    .state('tab.pautas', {
+        url: '/pautas/:idSubcategoria',
+        views: {
+          'tab-home': {
+            templateUrl: 'templates/pautas.html',
+            controller: 'pautasController'
+          }
+        }
+      })
+      
     .state('tab.account', {
       url: '/account',
       views: {

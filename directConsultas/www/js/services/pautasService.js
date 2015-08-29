@@ -1,6 +1,6 @@
-angular.module('starter.services', []).service("personasService", function ($http) {
+angular.module('starter.services', []).service("pautasService", function ($http) {
     var uri = "http://app.directconsultas.com/administrador/";
-    
+    /*
     this.getByRol = function (idRol) {
         
         var req = $http.get(uri+'/api/rol/' + idRol + "/persona");
@@ -48,5 +48,5 @@ angular.module('starter.services', []).service("personasService", function ($htt
         var req = $http.put(uri+'/api/persona/' + id, persona);
         return req;
         
-    };
+    };*/
 });

@@ -43,7 +43,7 @@
 	      <ion-item class="item-accordion"
 	                ng-repeat="subcategoria in categoria.subcategorias"
 	                ng-show="isGroupShown(categoria)">
-	        {{subcategoria.nombre}}
+                  <a style="text-decoration: none; color: #666" href="#/tab/pautas/{{subcategoria.idSubcategoria}}">{{subcategoria.nombre}}</a>
 	      </ion-item>
 	    </div>
 	    
