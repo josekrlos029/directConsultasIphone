@@ -21,7 +21,18 @@ angular.module('starter.controllers', [])
         .controller('pautasController', function ($scope, $stateParams, $ionicLoading, pautasService) {
 
             $scope.idSubcategoria = $stateParams.idSubcategoria;
+            $scope.nombreSubcategoria = $stateParams.nombre;
             $scope.pautas = [];
+            
+            $scope.grid = false;
+            
+            $scope.desactivarGrid = function(){
+                $scope.grid = false;
+            };
+            
+            $scope.activarGrid = function(){
+                $scope.grid = true;
+            };
 
             var ciudad = session.getCiudad();
             loadPautas();

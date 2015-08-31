@@ -2,7 +2,7 @@
 
   <ion-content>
 
-    <ion-slide-box style="margin-top: 12px;" show-pager="false" auto-play="true" id="slide" on-slide-changed="slideHasChanged($index)">
+    <ion-slide-box style="/*margin-top: 5px;*/" show-pager="false" auto-play="true" id="slide" on-slide-changed="slideHasChanged($index)">
 	  
 	  <ion-slide ng-repeat="pauta in Pautas">
 
@@ -39,12 +39,13 @@
 	        
 	         <img class="categoria" style="float:left" src="http://app.directconsultas.com/utiles/imagenes/categorias/{{categoria.idCategoria}}.jpg" /><p style="padding:3px;float:left">{{categoria.nombre}}</p>
 	      </ion-item>
-
-	      <ion-item class="item-accordion"
-	                ng-repeat="subcategoria in categoria.subcategorias"
+                
+              <a style="text-decoration: none; color: #666" href="#/tab/pautas/{{subcategoria.idSubcategoria}}/{{subcategoria.nombre}}" ng-repeat="subcategoria in categoria.subcategorias"
 	                ng-show="isGroupShown(categoria)">
-                  <a style="text-decoration: none; color: #666" href="#/tab/pautas/{{subcategoria.idSubcategoria}}">{{subcategoria.nombre}}</a>
+	      <ion-item class="item-accordion">{{subcategoria.nombre}}
+                  <!--<a style="text-decoration: none; color: #666" href="#/tab/pautas/{{subcategoria.idSubcategoria}}">{{subcategoria.nombre}}</a>-->
 	      </ion-item>
+              </a>
 	    </div>
 	    
 	  </ion-list>

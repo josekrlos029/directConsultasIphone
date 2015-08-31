@@ -7,9 +7,9 @@
 // 'starter.controllers' is found in controllers.js
 var app;
 (function(){
-  app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+  app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
 
-  .run(function($ionicPlatform) {
+  .run(function($ionicPlatform,$cordovaStatusbar) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -19,18 +19,6 @@ var app;
 
       }
       
-//        $cordovaStatusbar.overlaysWebView(true);
-//        $cordovaStatusbar.style(1);//Light
-//        
-//        $cordovaStatusbar.show();
-        
-      
-      if (window.StatusBar) {
-        // org.apache.cordova.statusbar required
-        StatusBar.styleLightContent();
-        StatusBar.styleColor('black');
-        StatusBar.show();
-      }
     });
   })
 
@@ -91,7 +79,7 @@ var app;
       })
       
     .state('tab.pautas', {
-        url: '/pautas/:idSubcategoria',
+        url: '/pautas/:idSubcategoria/:nombre',
         views: {
           'tab-home': {
             templateUrl: 'templates/pautas.html',
